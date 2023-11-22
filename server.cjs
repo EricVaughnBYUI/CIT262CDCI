@@ -8,3 +8,5 @@ app.get('/', (req, res)=>{
 app.get('/eric', (req,res) => {res.send("Hello Eric")});
 
 app.listen(port, ()=>console.log("Listening"));
+
+module.exports=app;

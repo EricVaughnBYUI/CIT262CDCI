@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///Users/ericvaughn/Desktop/BYUI/Fall%202023/IT%20Management/api-tests/.github/workflows/deploy.yaml"
+    }
+}

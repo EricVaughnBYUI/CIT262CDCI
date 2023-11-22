@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eric-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eric-api
+    templates:
+      metadata:
+        labels:
+          app: eric-api
+        spec:
+          containers:
+            - name: eric-api
+            # This image is going to be the path to the image you create in a future step
+              image: us-docker.pkg.dev/byui-scrum-team-11am-mst/eric-api/api-test
+              ports:
+                - containerPort: 3000
+              resources:
+                limits:
+                  cpu: ".5"
+                  memory: "250Mi"
+              livenessProbe:
+                httpGet:
+                  path: /
+                  port: 3000
+                  scheme: HTTP
+                failureThreshold: 1
+                periodSeconds: 10
+                timeoutSeconds: 10
+              startupProbe:
+                httpGet:
+                  path: /
+                  port: 3000
+                  scheme: HTTP
+                failureThreshold: 30
+                periodSeconds: 10
+                timeoutSeconds: 10
