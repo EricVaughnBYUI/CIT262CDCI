@@ -15,7 +15,7 @@ spec:
       containers:
         - name: eric-api
         # This image is going to be the path to the image you create in a future step
-          image: us-docker.pkg.dev/byui-scrum-team-11am-mst/eric-api/api-test
+          image: us-docker.pkg.dev/byui-scrum-team-11am-mst/eric-api/api-tests
           ports:
             - containerPort: 3000
           resources:
